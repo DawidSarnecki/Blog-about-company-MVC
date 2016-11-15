@@ -11,37 +11,60 @@ class BlogModel extends Model
 	/*********************************************************** 
 	* Public members
 	************************************************************/ 
-	public function Index(){
+	
+		public function Index(){
 		$this->query('SELECT * FROM blog_public');
 		$rows = $this->resultSet();
 		//print_r($rows);
-		return $rows;
+		
+		//$blogitem = array();
+		
+		//echo "<br><br>";
+		
+		
+		$this->query('SELECT * FROM all_comments');
+			$commentss = $this->resultset();
+			//print_r($commentss);
+		
+	
+		foreach ($rows as $row)
+		{
+		echo "<br>".$row['blogtext_id']."<br>";
+			$this->query
+			('SELECT * FROM all_comments 
+			WHERE BlogItemID = :blog_id');
+			$this->bindValue(':blog_id', $row['blogtext_id']);
+			$comments = $this->resultset();
+			//print_r($comments);
+			
+			if ($comments)
+			{
+				foreach ($comments as $com)
+				{
+					// nie działa przypisanie: weiersz tablicy rows -> tablica comments
+					
+					$blogitem[$row['blogtext_id']] = $com;
+				}
+			}
+		}
+		//print_r($blogitem);
+		return $blogitem;
+	
 	}
 	
 	
 	  public function get_comments($text_id)
     {        
-        //connect to database
-        $this->db->connect();
-
-        //sanitize data
-        $var1 = $this->db->escape($var1);
-        $var2 = $this->db->escape($var2);
-        $cond = $cond1.$var1."'"; 
-        $cond.= " ".$cond2." ".$var2;  
-
         //prepare query
-        $this->db->prepare
-        (
-            "
-            SELECT *  FROM `comments`
-            WHERE $cond
-            ;
-            "
-        );
+        $this->query('SELECT * FROM all_comments 
+		WHERE BlogItemID = :blog_id');
+		$this->bindValue(':blog_id', $text_id);
+		
+		//execute query
+		$comments = $this->resultset();
+		return $comments;
 
-        //execute query
-        $this->query();
+	  /*
         $resultArr[0] = 0;
         $i = 1;
         while( $result = $this->db->fetch('array')){
@@ -52,17 +75,41 @@ class BlogModel extends Model
 
         return $resultArr;
     }
+	*/
+	
+	/*
+	public function Index(){
+		$this->query('SELECT * FROM blog_public');
+		$rows = $this->resultSet();
+		//print_r($rows);
+		return $rows;
+	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	  public function get_comments($text_id)
+    {        
+        //prepare query
+        $this->query('SELECT * FROM all_comments 
+		WHERE BlogItemID = :blog_id');
+		
+		$this->bindValue(':blog_id', $row['blogtext_id']);
+		
+		//execute query
+		$comments = $this->resultset();
+		return $comments;
+
+	  /*
+        $resultArr[0] = 0;
+        $i = 1;
+        while( $result = $this->db->fetch('array')){
+            $resultArr[$i] = $result;
+            $i++;
+        }
+        $resultArr[0] = $i;
+
+        return $resultArr;
+	*/	
+    }
 	
 	
 	
