@@ -2,15 +2,15 @@
 
 /*********************************************************** 
 * Class name:
-*    BlogModel
+*     Commnent 
 * Descripton:
-*    extends Model abstract class
+*     Commnent data, class extends Model abstract
 **********************************************************/
 
 class Comment extends Model
 {
 	/*********************************************************** 
-	* Public members
+	* Private members
 	************************************************************/ 
 	private $Id;
 	private $login;
@@ -48,10 +48,5 @@ class Comment extends Model
 	{        
 		return $this->Id;
 	}
-
-	
-	
-	
-	
 	
 }

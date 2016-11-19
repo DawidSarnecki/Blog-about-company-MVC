@@ -7,7 +7,16 @@
 				<h3><?php echo $blog->getTitle(); ?></h3>
 				<h10><?php echo $blog->getLogin().", ".$blog->getUpdateTime(); ?></h10>
 				<p><?php echo $blog->getBody(); ?></p>
-				<p><a href="<?php echo ROOT_PATH; ?>blog/addcomment"> + Dodaj komentarz</a><p>
+				 
+				<form method="post" action="<?php echo ROOT_PATH ?>blog/addcomment">
+					<ul class="nav navbar-nav navbar-right">
+					<li>
+					<input type="hidden" name="postId" value="<?php echo $blog->getId();?>"/>
+					</li>
+					<li>
+					<input type="submit" value='+ Dodaj komentarz'/>
+					</li></ul>
+				</form>
 			</div>
 			<?php 
 			

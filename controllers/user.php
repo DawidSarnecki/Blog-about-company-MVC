@@ -22,7 +22,7 @@ class User extends Controller
 	}
 
 	protected function logout(){
-		unset($_SESSION['is_logged_in']);
+		unset($_SESSION['logged_in']);
 		unset($_SESSION['user_data']);
 		session_destroy();
 		// Redirect

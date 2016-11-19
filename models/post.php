@@ -1,9 +1,9 @@
 <?php
 /*********************************************************** 
 * Class name:
-*    BlogModel
+*    Post
 * Descripton:
-*    extends Model abstract class
+*    Post data, class extends Model abstract class
 **********************************************************/
 
 class Post extends Model
@@ -26,23 +26,12 @@ class Post extends Model
 	* Public members
 	************************************************************/ 
 	
-	public function __construct($tit, $stat, $logi, $tex, $updateT,$removeT,$user,$postId)
+	public function __construct($title, $status, $login, $text, $updateT,$removeT,$user,$postId)
     {
-		$this->title = $tit;
-		$this->status = $stat;
-		$this->login = $logi;
-		$this->text = $tex;
-		$this->updateTime = $updateT;
-		$this->removeTime = $removeT;
-		$this->userId = $user;
-		$this->Id = $postId;	
-    }
-	
-	public function add($tit, $logi, $tex, $updateT,$removeT,$user,$postId)
-    {
-		$this->title = $tit;
-		$this->login = $logi;
-		$this->text = $tex;
+		$this->title = $title;
+		$this->status = $status;
+		$this->login = $login;
+		$this->text = $text;
 		$this->updateTime = $updateT;
 		$this->removeTime = $removeT;
 		$this->userId = $user;
@@ -61,7 +50,7 @@ class Post extends Model
 	
 	public function getUserId()
 	{        
-		return $this->user;
+		return $this->userId;
 	}
 	
 	public function getBody()

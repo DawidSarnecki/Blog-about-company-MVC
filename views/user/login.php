@@ -1,5 +1,4 @@
-﻿
-<div class="panel panel-default">
+﻿<div class="panel panel-default">
 	<div class="panel-heading">
 		<h3>Logowanie</h3>
 		<form class="form-horizontal" role="form2" method="post" action="<?php $_SERVER['PHP_SELF']; ?>" >

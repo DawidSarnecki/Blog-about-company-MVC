@@ -23,9 +23,9 @@ class UserModel extends Model
 
 		if ($post['submit'])
 		{
-			$user = ($_POST['user']);
-			$pass = ($_POST['pass']);
-			$email = ($_POST['email']);
+			$user = ($post['user']);
+			$pass = ($post['pass']);
+			$email = ($post['email']);
 
 			$salt1="!@#?><";
 			$salt2="^%yt";
@@ -77,15 +77,15 @@ class UserModel extends Model
 		  if (isset($post['user']))
 		  {
 			$user = ($post['user']);
-			echo $user;
+			//echo $user;
 			$pass_tmp = ($post['pass']);
-			echo $pass_tmp;
+			//echo $pass_tmp;
 			
 			//hashing password
 			$salt1="!@#?><";
 			$salt2="^%yt";
-			$pass = hash( 'whirlpool', '$salt1$pass_tmp$salt2');
-			echo $pass;
+			$pass = hash( 'whirlpool', "$salt1$pass_tmp$salt2");
+			//echo $pass;
 			
 			if ($user == '' || $pass == '' )
 			{
@@ -98,14 +98,13 @@ class UserModel extends Model
 				$this->bindValue(':user', $user);
 				$this->bindValue(':pass', $pass);
 				
-				$rows = $this->resultset(); 
-					print_r($rows);
-					
-			  if ($rows)
+				$row = $this->single(); 
+					//var_dump($row);
+			  if (!$row)
 			  {
 				echo '<h3>! Błędna nazwa użytkownika lub hasło.</h3>';
 			  }
-			  elseif ($rows[0]['IsBlocked'])
+			  elseif ($row['IsBlocked'])
 			  {
 				echo '<h3>! Konto [ '.$user. ' ] zostało zablokowane. Wymagany kontakt z administratorem, e-mail: admin@blog.pl.</h3>';
 			  }
@@ -113,15 +112,16 @@ class UserModel extends Model
 			  {
 				$_SESSION['logged_in'] = true;
 				$_SESSION['user'] = $user;
-				$_SESSION['ID'] = $rows[0]['ID'];
-				$_SESSION['IsAdmin'] = $rows[0]['IsAdmin'];
+				$_SESSION['ID'] = $row['ID'];
+				$_SESSION['IsAdmin'] = $row['IsAdmin'];
 				
 				$_SESSION['user_data'] = array(
-					'id'	=> $row['id'],
-					'name'	=> $row['name'],
-					'email'	=> $row['email']
+					'id'	=> $row['ID'],
+					'name'	=> $row['Login'],
+					'email'	=> $row['Email']
 					);
 				
+				//print_r($row[1]['ID']);
 				header('Location: '.ROOT_URL.'blog');
 			  }
 			 

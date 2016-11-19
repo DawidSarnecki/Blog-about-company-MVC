@@ -31,8 +31,9 @@
 			
 			<ul class="nav navbar-nav navbar-right">
 				<?php if(isset($_SESSION['logged_in'])) : ?>
-				<li><a href="<?php echo ROOT_URL; ?>blog/add"> + Nowy Wpis </a></li>
 				<li><a href="<?php echo ROOT_URL; ?>">Witaj <?php echo $_SESSION['user']; ?></a></li>
+				<li><a href="<?php echo ROOT_URL; ?>blog/add"> + Nowy Wpis </a></li>
+				<li><a href="<?php echo ROOT_URL; ?>blog/archive"> Archiwum </a></li>
 				<li><a href="<?php echo ROOT_URL; ?>user/logout">Logout</a></li>
 				<?php else : ?>
 				<li><a href="<?php echo ROOT_URL; ?>user/login">Login</a></li>

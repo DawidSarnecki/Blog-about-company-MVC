@@ -16,7 +16,7 @@
 			</div>
 			<div class="form-group">        
 			<div class="col-sm-offset-2 col-sm-2">
-			<input  class="form-control" type="submit" name="add" value ="Dodaj wpis" /> 
+			<input  class="form-control" type="submit" name="submit" value ="Dodaj wpis" /> 
 			</div>
 			</div>
 		</form>
