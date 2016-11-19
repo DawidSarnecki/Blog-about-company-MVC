@@ -35,7 +35,7 @@ require('models/contact.php');
 require('models/user.php');
 require('models/post.php');
 require('models/comment.php');
-require('aspect/ajax/login_check.php');
+
 
 $bootstrap = new Bootstrap($_GET);
 $controller = $bootstrap->createController();

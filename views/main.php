@@ -5,7 +5,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>BLOG O firmie</title>
 	<link rel="stylesheet" href="<?php echo ROOT_PATH; ?>aspect/css/bootstrap.css">
-	<link rel="stylesheet" href="<?php echo ROOT_PATH; ?>aspect/css/w3s.css"> 
 	<link rel="stylesheet" href="<?php echo ROOT_PATH; ?>aspect/css/mystyles.css"> 
 	<script src="<?php echo ROOT_PATH; ?>aspect/ajax/script.js"></script>
 </head>
