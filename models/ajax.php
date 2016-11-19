@@ -1,21 +1,14 @@
-﻿<?php
+<?php
 /*********************************************************** 
 * Class name:
-*    ContactModel
+*    Ajax
 * Descripton:
 *    extends Model abstract class
 **********************************************************/
 
-class ContactModel extends Model
+class Ajax extends Model
 {
 	/*********************************************************** 
 	* Public members
 	************************************************************/ 
-	
-	public function Index()
-	{
-		return;
-	}
-	
-	
 }

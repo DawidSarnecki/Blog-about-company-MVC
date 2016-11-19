@@ -68,7 +68,20 @@ abstract class Model
 		$this->execute();
 		return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
-
+	
+	public function resultObj($class){
+		$this->execute();
+		$this->stmt->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, $class);
+		return $this->stmt->fetchAll();
+	}
+	
+	
+	public function resultObject(){
+		$this->execute();
+		return $this->stmt->setFetchMode(PDO::FETCH_OBJ);
+	}
+	
+	
 	public function lastInsertId(){
 		return $this->dbh->lastInsertId();
 	}

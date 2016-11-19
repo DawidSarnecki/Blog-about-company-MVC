@@ -6,7 +6,7 @@
 		
 		  <label for="Login" class="control-label col-sm-2">Login:</label>
 		  <div class="col-sm-4">
-			<input type='text'maxlength='16' name='user'class="form-control" placeholder="login..." value="<?php echo $user; ?>" onBlur='checkLogin(this)'><p id='info'></p>
+			<input type='text'maxlength='16' name='user'class="form-control" placeholder="login..." value="" onBlur='checkLogin(this)'><p id='info'></p>
 			</div>
 		</div>
 		<div class="form-group">
