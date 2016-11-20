@@ -1,5 +1,5 @@
-﻿
-//javascripte functions (according to Lerarning PHP, MySQL & JavaSript, 4th Edition)
+﻿//javascript functions 
+//(according to Lerarning PHP, MySQL & JavaSript, 4th Edition, Robert Nixon, O'REILY 2015)
 	function Open(i) 
 	{
 		return typeof i == 'object' ? i : document.getElementById(i)

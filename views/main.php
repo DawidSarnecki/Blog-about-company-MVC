@@ -4,9 +4,9 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>BLOG O firmie</title>
-	<link rel="stylesheet" href="<?php echo ROOT_PATH; ?>aspect/css/bootstrap.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo ROOT_PATH; ?>aspect/css/mystyles.css"> 
-	<script src="<?php echo ROOT_PATH; ?>aspect/ajax/script.js"></script>
+	<link rel="stylesheet" href="<?php echo ROOT_PATH; ?>aspect/css/w3s.css">
 </head>
 <body>
 	<div class="jumbotron"><center><img src="<?php echo ROOT_PATH; ?>aspect/files/company.jpg" style="width:30%" alt="Image">

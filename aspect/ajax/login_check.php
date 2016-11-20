@@ -1,6 +1,6 @@
 ﻿<?php 
-  $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
-  /*
+  //$post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING); 
+/*
   if ($post['user'])
   {
 	   //echo $post['user'];
@@ -19,7 +19,7 @@
       "Login jest dostępny.";
 	   
   }
-  */  
-  /*else
+ 
+
 	  echo '$post is null';*/
 ?>

@@ -8,13 +8,13 @@
 * Brief:       
 *      Include neccessary files and create boostrap object
 * Author:      
-*      DawidSarnecki according to 
-https://www.udemy.com/learn-object-oriented-php-by-building-a-complete-website/
+*      DawidSarnecki
+*according to 
+*https://www.udemy.com/learn-object-oriented-php-by-building-a-complete-website/
 * Contact:
 *      @
 ***********************************************************************/  
 // Start Session
-
 session_start();
 
 require ('config.php');
